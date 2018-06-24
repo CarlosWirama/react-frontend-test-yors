@@ -1,36 +1,24 @@
-# Yors Mobile Frontend Test
+# Carlos - Yors Mobile Frontend Test
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
   
 
-* Take home test project React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
+* Take home test project React Native App Utilizing [Ignite](https://github.com/infinitered/ignite) for Yors.id
 
   
 ###  Introduction  
 This test is simulation test to represent about how and what we do day by day at Yors, if you pass this test then we can asume you are ready to join us.
   
 
-### :arrow_up: Preparation
+### Preparation
 
 
-**Step 1:** Please fork the code and create your own repository base on this test repo. Do not commit on my branch or repo
-
- 
-**Step 2:** Follow the instruction test.
-
-  
-**Step 3:** Commit your answer code and email me where you store your code, make sure you give proper access to me. You can use any SCM you like
-  
-
-**Step 4:** If you pass this test you can move to the next step of interview.
+**Step 1:** Run `npm install`
 
 
-### :arrow_forward: Instruction
 
-  
-**Note:** This test was create with Ignite boilerplate you can pull origin repository or use this repo.
-
+### Tasks
 
 **Task.1:** Please create new navigation on the bottom of the page and the navigation should appear on every page. Navigation can slide up and show subcategory please look **Pic.2**
 
