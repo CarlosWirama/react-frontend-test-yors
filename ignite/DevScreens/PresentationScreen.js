@@ -3,7 +3,7 @@ import { Platform, ScrollView, Text, Image, View, TouchableOpacity } from 'react
 import { Images } from './DevTheme'
 import ButtonBox from './ButtonBox'
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation'
-import Icons from 'react-native-vector-icons/Ionicons';
+
 
 // Screens
 import APITestingScreen from './APITestingScreen'
@@ -45,14 +45,14 @@ class PresentationScreen extends React.Component {
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
-        <TouchableOpacity onPress={this.props.screenProps.toggle} style={{
+        {/*<TouchableOpacity onPress={this.props.screenProps.toggle} style={{
           position: 'absolute',
           paddingTop: 30,
           paddingHorizontal: 10,
           zIndex: 10
         }}>
           <Image source={Images.closeButton} />
-        </TouchableOpacity>
+        </TouchableOpacity>*/}
         <ScrollView showsVerticalScrollIndicator={false} bounces={false} style={styles.container}>
           <View style={styles.centered}>
             <Image source={Images.igniteClear} style={styles.logo} />
@@ -83,105 +83,8 @@ class PresentationScreen extends React.Component {
   }
 }
 
-const HomeTab = TabNavigator(
-  {
-    Home: { screen: PresentationScreen },
-    APITestingScreen: { screen: APITestingScreen },
-    ComponentExamplesScreen: { screen: ComponentExamplesScreen },
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#fff',
-        ...Platform.select({
-          ios: {
-            borderBottomColor: "#ececec",
-            borderBottomWidth: 1,
-            height: 51
-          },
-          android: {
-            backgroundColor: 'cyan',
-            elevation: 0,
-            borderBottomColor: "#ececec",
-            borderBottomWidth: 1,
-            height: 20,
-            marginTop: 0
-          },
-        }),
-      },
-      // tabBarLabel: () => {
-      //   const { routeName } = navigation.state;
-      //   switch (routeName) {
-      //     case 'Explore':
-      //       return 'Jelajah';
-      //     case 'MyBooking':
-      //       return 'Pesananku';
-      //     case 'Favorit':
-      //       return 'Favorit';
-      //     case 'MessageBlank':
-      //       return 'Inbox';
-      //     case 'AccountPage':
-      //       return 'Akun';
-      //   }
-      // },
-      tabBarIcon: ({ focused }) => {
-        const { routeName } = navigation.state;
-        let iconName, control;
-        switch (routeName) {
-          case 'Home':
-            iconName = `ios-home${focused ? '' : '-outline'}`;
-            break;
-          case 'APITestingScreen':
-            iconName = `ios-paper${focused ? '' : '-outline'}`;
-            break;
-          case 'ComponentExamplesScreen':
-            iconName = `ios-search${focused ? '' : '-outline'}`;
-            // break;
-          // case 'MessageBlank':
-          //   iconName = `ios-mail-open${focused ? '' : '-outline'}`;
-          //   break;
-          // case 'AccountPage':
-          //   iconName = `ios-person${focused ? '' : '-outline'}`;
-        }
-        return (
-          <View>
-            <Icons
-              name={iconName}
-              size={28}
-              style={{ marginBottom: 0, }}
-              // color={focused ? Colors.bottomTabSelected : Colors.bottomTabBlurred}
-            />
-          </View>
-        );
-      },
-    }),
-    tabBarComponent: TabBarBottom,
-    tabBarPosition: 'bottom',
-    animationEnabled: false,
-    swipeEnabled: true,
-    lazy: false,
-
-    tabBarOptions: {
-      // activeTintColor: Colors.bottomTabSelected,
-      labelStyle: {
-        fontSize: 12,
-        // fontFamily: 'Hind-SemiBold',
-        // ...Platform.select({
-        //   ios: {
-        //     marginBottom: -8,
-        //     marginTop:-8
-        //   },
-        //   android: {
-        //     lineHeight: 18,
-        //   },
-        // }),
-      },
-      style: { paddingBottom: 5, height: 60, backgroundColor: '#fbfbfb', borderTopColor: '#ececec', }
-    },
-  }
-);
 export default StackNavigator({
-  HomeTab: {screen: HomeTab},
+  // HomeTab: {screen: HomeTab},
   PresentationScreen: {screen: PresentationScreen},
   APITestingScreen: {screen: APITestingScreen},
   ComponentExamplesScreen: {screen: ComponentExamplesScreen},
@@ -194,7 +97,7 @@ export default StackNavigator({
     opacity: 1,
     backgroundColor: '#3e243f'
   },
-  initialRouteName: 'HomeTab',
+  initialRouteName: 'PresentationScreen',
   headerMode: 'none',
   // Keeping this here for future when we can make
   navigationOptions: {
