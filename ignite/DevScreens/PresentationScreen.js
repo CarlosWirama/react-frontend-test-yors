@@ -84,12 +84,11 @@ class PresentationScreen extends React.Component {
 }
 
 export default StackNavigator({
-  // HomeTab: {screen: HomeTab},
   PresentationScreen: {screen: PresentationScreen},
   APITestingScreen: {screen: APITestingScreen},
-  ComponentExamplesScreen: {screen: ComponentExamplesScreen},
+  // ComponentExamplesScreen: {screen: ComponentExamplesScreen},
   DeviceInfoScreen: {screen: DeviceInfoScreen},
-  PluginExamplesScreen: {screen: PluginExamplesScreen},
+  // PluginExamplesScreen: {screen: PluginExamplesScreen},
   ThemeScreen: {screen: ThemeScreen},
   FaqScreen: {screen: FaqScreen}
 }, {

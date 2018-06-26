@@ -16,10 +16,10 @@ const Colors = {
 
 const HomeTab = TabNavigator(
   {
-    PresentationScreen: { screen: PresentationScreen },
-    ComponentExamplesScreen: { screen: ComponentExamplesScreen },
-    PluginExamplesScreen: { screen: PluginExamplesScreen },
-    ThemeScreen: { screen: ThemeScreen },
+    Home: { screen: PresentationScreen },
+    Component: { screen: ComponentExamplesScreen },
+    Plugin: { screen: PluginExamplesScreen },
+    More: { screen: ThemeScreen },
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -41,35 +41,20 @@ const HomeTab = TabNavigator(
       //     },
       //   }),
       // },
-      tabBarLabel: () => {
-        const { routeName } = navigation.state;
-        switch (routeName) {
-          case 'PresentationScreen':
-            return 'Menu';
-          case 'PluginExamplesScreen':
-            return 'Plugin';
-          case 'ComponentExamplesScreen':
-            return 'Component';
-          // case 'MessageBlank':
-          //   return 'Inbox';
-          // case 'AccountPage':
-          //   return 'Akun';
-        }
-      },
       tabBarIcon: ({ focused }) => {
         const { routeName } = navigation.state;
         let iconName, control;
         switch (routeName) {
-          case 'PresentationScreen':
+          case 'Home':
             iconName = `ios-home${focused ? '' : '-outline'}`;
             break;
-          case 'PluginExamplesScreen':
-            iconName = `ios-bulb${focused ? '' : '-outline'}`;
-            break;
-          case 'ComponentExamplesScreen':
+          case 'Component':
             iconName = `ios-photos${focused ? '' : '-outline'}`;
             break;
-          case 'PresentationScreen':
+          case 'Plugin':
+            iconName = `ios-bulb${focused ? '' : '-outline'}`;
+            break;
+          case 'More':
             iconName = `ios-menu${focused ? '' : '-outline'}`;
         }
         return (
