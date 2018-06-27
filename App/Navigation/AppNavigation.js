@@ -23,24 +23,6 @@ const HomeTab = TabNavigator(
   },
   {
     navigationOptions: ({ navigation }) => ({
-      // headerStyle: {
-      //   backgroundColor: '#fff',
-      //   ...Platform.select({
-      //     ios: {
-      //       borderBottomColor: "#ececec",
-      //       borderBottomWidth: 1,
-      //       height: 51
-      //     },
-      //     android: {
-      //       backgroundColor: 'cyan',
-      //       elevation: 0,
-      //       borderBottomColor: "#ececec",
-      //       borderBottomWidth: 1,
-      //       height: 20,
-      //       marginTop: 0
-      //     },
-      //   }),
-      // },
       tabBarIcon: ({ focused }) => {
         const { routeName } = navigation.state;
         let iconName, control;
