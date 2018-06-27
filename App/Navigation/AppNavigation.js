@@ -7,6 +7,7 @@ import PresentationScreen from '../../ignite/DevScreens/PresentationScreen'
 import ComponentExamplesScreen from '../../ignite/DevScreens/ComponentExamplesScreen'
 import PluginExamplesScreen from '../../ignite/DevScreens/PluginExamplesScreen'
 import ThemeScreen from '../../ignite/DevScreens/ThemeScreen'
+import ScannerScreen from '../Containers/ScannerScreen'
 import styles from './Styles/NavigationStyles'
 
 const Colors = {
@@ -19,6 +20,7 @@ const HomeTab = TabNavigator(
     Home: { screen: PresentationScreen },
     Component: { screen: ComponentExamplesScreen },
     Plugin: { screen: PluginExamplesScreen },
+    Scanner: { screen: ScannerScreen },
     More: { screen: ThemeScreen },
   },
   {
@@ -35,6 +37,9 @@ const HomeTab = TabNavigator(
             break;
           case 'Plugin':
             iconName = `ios-bulb${focused ? '' : '-outline'}`;
+            break;
+          case 'Scanner':
+            iconName = `ios-search${focused ? '' : '-outline'}`;
             break;
           case 'More':
             iconName = `ios-menu${focused ? '' : '-outline'}`;

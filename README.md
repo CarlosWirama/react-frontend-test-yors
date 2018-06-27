@@ -14,7 +14,9 @@ This test is simulation test to represent about how and what we do day by day at
 ### Preparation
 
 
-**Step 1:** Run `npm install`
+**Step 1:** Run `npm install`, then `react-native link`.
+**Step 1:** Make sure you have connected to ios or android device, or you have a running ios simulator or android emulator.
+**Step 1:** Run `react-native run-ios` or `react-native run-android`.
 
 
 
