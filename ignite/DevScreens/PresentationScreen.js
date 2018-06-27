@@ -1,8 +1,10 @@
 import React from 'react'
-import { ScrollView, Text, Image, View, TouchableOpacity } from 'react-native'
+import { Platform, ScrollView, Text, Image, View, TouchableOpacity } from 'react-native'
 import { Images } from './DevTheme'
 import ButtonBox from './ButtonBox'
-import { StackNavigator } from 'react-navigation'
+import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation'
+
+
 // Screens
 import APITestingScreen from './APITestingScreen'
 import ComponentExamplesScreen from './ComponentExamplesScreen'
@@ -43,14 +45,14 @@ class PresentationScreen extends React.Component {
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
-        <TouchableOpacity onPress={this.props.screenProps.toggle} style={{
+        {/*<TouchableOpacity onPress={this.props.screenProps.toggle} style={{
           position: 'absolute',
           paddingTop: 30,
           paddingHorizontal: 10,
           zIndex: 10
         }}>
           <Image source={Images.closeButton} />
-        </TouchableOpacity>
+        </TouchableOpacity>*/}
         <ScrollView showsVerticalScrollIndicator={false} bounces={false} style={styles.container}>
           <View style={styles.centered}>
             <Image source={Images.igniteClear} style={styles.logo} />
@@ -84,9 +86,9 @@ class PresentationScreen extends React.Component {
 export default StackNavigator({
   PresentationScreen: {screen: PresentationScreen},
   APITestingScreen: {screen: APITestingScreen},
-  ComponentExamplesScreen: {screen: ComponentExamplesScreen},
+  // ComponentExamplesScreen: {screen: ComponentExamplesScreen},
   DeviceInfoScreen: {screen: DeviceInfoScreen},
-  PluginExamplesScreen: {screen: PluginExamplesScreen},
+  // PluginExamplesScreen: {screen: PluginExamplesScreen},
   ThemeScreen: {screen: ThemeScreen},
   FaqScreen: {screen: FaqScreen}
 }, {
@@ -100,7 +102,9 @@ export default StackNavigator({
   navigationOptions: {
     header: {
       left: (
-        <TouchableOpacity onPress={() => window.alert('pop')} ><Image source={Images.closeButton} style={{marginHorizontal: 10}} /></TouchableOpacity>
+        <TouchableOpacity onPress={() => window.alert('pop')} >
+          <Image source={Images.closeButton} style={{marginHorizontal: 10}} />
+        </TouchableOpacity>
       ),
       style: {
         backgroundColor: '#3e243f'
@@ -108,3 +112,4 @@ export default StackNavigator({
     }
   }
 })
+
